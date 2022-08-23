@@ -29,7 +29,21 @@ yarn start:dev
 ```
 localhost:3000/api/v2/seed
 ```
+# Build de Producción
+1. Crear el archivo de variables de entorno para prducción ```prod.env```
+2. Llenar las variables de entorno de producción
+3. Crear la nueva imagen
+```
+docker-compose -f docker-compose.yaml --env-file prod.env up --build
+```
 
-## Stack usado
+# Notas
+Hacer un redeply en Heroku sin cambios
+```
+git commit --allow-empty -m"Tigger Heroku deploy"
+git push heroku <master | main>
+```
+
+# Stack usado
 * MongoDB
 * Nest
